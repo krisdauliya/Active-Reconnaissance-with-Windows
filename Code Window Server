@@ -21,3 +21,11 @@ To View any specific user
   
 To View user’s group memberships
 	PS C:\Windows\system32> Get-ADPrincipalGroupMembership User_Name
+	
+PowerShell to Perform an Active Reconnaissance of a Windows Client
+
+To Identify the Active Directory that lab-user belongs to 
+	PS C:\Windows\system32> System.directoryServices.activeDirectory.forest]::GetCurrentForest()
+	
+Above command show the Current Forest, which is different from domain name, to identify which domain user is associated with, we use below command 
+PS C:\Windows\system32> [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()
