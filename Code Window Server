@@ -5,13 +5,13 @@ Logged into Window server-12R and opened power shell as Administrator. Created a
   
 Above command stores all user Credential in the variable $cred. Now, we are going to filter SAMAccountName (Security Account Manager) 
 from the above variable and select the.  
-PS C:\Windows\system32> Get-ADGroupMember -Credential $cred -server Win12R2 “Domain Users” | select samaccountname
+	PS C:\Windows\system32> Get-ADGroupMember -Credential $cred -server Win12R2 “Domain Users” | select samaccountname
 
 Above command gives all SAMAccountName User; however, we want to identify the Domain admin. Below command help to identify the Domain Admin member. 
-PS C:\Windows\system32> Get-ADGroupMember -Credential $cred -server Win12R2 “Domain Admins”
+	PS C:\Windows\system32> Get-ADGroupMember -Credential $cred -server Win12R2 “Domain Admins”
 
 To Filter SAMAccountName with Domain Admin, we can use below command 
-PS C:\Windows\system32> Get-ADGroupMember -Credential $cred -server Win12R2	“Domain Admins” | select samaccountname
+	PS C:\Windows\system32> Get-ADGroupMember -Credential $cred -server Win12R2	“Domain Admins” | select samaccountname
 
 To View domain itself
 	PS C:\Windows\system32> Get-ADDomain
@@ -28,4 +28,4 @@ To Identify the Active Directory that lab-user belongs to
 	PS C:\Windows\system32> System.directoryServices.activeDirectory.forest]::GetCurrentForest()
 	
 Above command show the Current Forest, which is different from domain name, to identify which domain user is associated with, we use below command 
-PS C:\Windows\system32> [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()
+	PS C:\Windows\system32> [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()
